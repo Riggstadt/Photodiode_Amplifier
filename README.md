@@ -22,3 +22,18 @@ Other observations:
 - The slew-rate (SR) [V/us] should be way bigger than for a jellybean part: i.e. the LM358 has a SR of 0.5V / us; Testing the LM358 as a precision diode, I've learned that even modest 10kHz sinewaves experience destortion due to the low slew-rate
 - Offset voltage should be as low as posssible (tens to at most hundreds of microvolts)
 - Differential capacitance and Common Mode capacitance should be specified in the d/s
+
+
+## To buy:
+- Better solder gun
+- liquid fluex
+- isopropil alcohol
+- magnifying lense and pcb holder
+
+
+Links:
+- https://www.ti.com/video/5751314142001
+- https://www.chem.uci.edu/~unicorn/243/handouts/photodiode.pdf
+- https://www.vishay.com/docs/80085/measurem.pdf
+- https://www.ti.com/lit/an/snoa988/snoa988.pdf?ts=1695809832627&ref_url=https%253A%252F%252Fwww.google.com%252F
+- 
