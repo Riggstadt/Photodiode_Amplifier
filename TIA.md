@@ -6,7 +6,16 @@ A regular transimpedance amplifier or transresistance amplifier employs only a r
 An important distinction to make going forward with this projects is that what I've implemented is valid only for constant GBW product op-amps and does not apply to non-unity gain stable or decompensated op-amps.
 
 A regular non-compensated transimpedance amplifier looks like this:
-[diagrama schemeit cu transres]
+
+
+<br>
+  <p align="center">
+    <img height = "550" src = "NONCOMPENSATED_TIA.png">
+    <br>
+    <br>
+    <a><b>Not compensated Transimpedance Amplifier</b></a>
+</p>
+<br>
 
 The amplifier presents a second order transfer function, that can be found derived <a href="https://www.planetanalog.com/seemingly-simple-circuits-transresistance-amplifier-part-1-approximating-op-amps/">here</a>. Of more interest to us, at least from the view point of stability analysis, are **$A_{OL}$** and **$\frac{1}{\beta}$**. We need this functions to determine the Rate of Closure of the two curves, meaning the difference between the slopes of the open loop gain and $\frac{1}{\beta}$. A ROC below or equal to 20dB/decade is considered the caharcateristic of a stable system, alternatively the ROC can be used to estimate the phase margin.
 
@@ -18,10 +27,26 @@ They approximatively intersect at $f_{I}=\frac{1}{2\cdot\pi}\cdot \sqrt{\frac{2\
 A proper derivation of this formulas would better account for the signs of the different functions, but for our ROC plot needs, those are irelevant, as we ignore phase in our analysis.
 
 Below is presented the test circuit used to determine $A_{OL}$ and $\frac{1}{\beta}$. The test circuit could be bettered by adding a copy of the circuit as a dummy load, to better represent the actual loading at the nodes of the op-amp.
-[imagine test circuit stabiliate]
+
+<br>
+  <p align="center">
+    <img height = "550" src = "NOT_COMP_TIA_STABILITY.JPG">
+    <br>
+    <br>
+    <a><b>Stability analysis test-circuit</b></a>
+</p>
+<br>
 
 Plotting the required functions, we observe in the plot made available below that the ROC is approximatively 40dB/dec.
-[imagine bode plot 80dB]
+
+<br>
+  <p align="center">
+    <img height = "550" src = "NON_COMP_BODE.jpg">
+    <br>
+    <br>
+    <a><b>Bode plot for ROC-analysis</b></a>
+</p>
+<br>
 
 The explanation for this is simple, the dominant-pole model of the op-amp ensures a -20dB/dec descending slope, whilst $\frac{1}{\beta}$ presents a single zero and a +20dB/dec ascending slope.
 
@@ -33,7 +58,15 @@ For such circuits, the size of the feedback resistor is quite important. A TIA w
 Comes from adding a carefully selected feedback capacitor across the feedback resistor.
 
 This is the equivalent circuit of a TIA with input and photodiode capacitances depicted.
-[circuit TIA cu capacitati parazitice]
+
+<br>
+  <p align="center">
+    <img height = "550" src = "PARASITIC_CAP_OP_AMP.png">
+    <br>
+    <br>
+    <a><b>TIA with input capacitances</b></a>
+</p>
+<br>
 
 The input capacitance is defined as $C_{I}=C_{D}+C_{CM}+C_{DIFF}$, where $C_{D}$ is the junction capacitance of the photodiode, and the other two terms are the parasitic capacitances of the input impedance of the op-amp.
 
@@ -51,10 +84,33 @@ However, I've taken a different approach.
 ## Q-based design procedure
 This is based on the presentation "Simple Transimpedance Designs Using High Speed Op Amps" by Steffens and Ramus.
 After long work the gentlemen from TI obtain the following transfer function characterizing the workings of the TIA:
-[slide 7 cu mentiune sursa]
+
+<br>
+  <p align="center">
+    <img height = "550" src = "SLIDE_7.jpg">
+    <br>
+    <br>
+    <a><b>Not compensated Transimpedance Amplifier</b></a>
+</p>
+<br>
+
 A regular second order transfer function is of the form $G(s)=G_{0}*\frac{w_{o}^{2}}{s^{2}+s\cdot\frac{wo}{Q}+w_{o}^{2}}$. If you are familiar with the other notation convention, $\zeta$ is in this case is $\frac{1}{2\cdot Q}$, and $C_{S}$ is the same as $C_{S}$
-[slide 8]
-[slide 10]
+
+<br>
+  <p align="center">
+    <img height = "550" src = "SLIDE_8.jpg">
+    <br>
+    <br>
+</p>
+<br>
+
+<br>
+  <p align="center">
+    <img height = "550" src = "SLIDE_10.jpg">
+    <br>
+    <br>
+</p>
+<br>
 
 Of interest to us is the equality $Q = \frac{F_{o}}{F_{c}}=\frac{P_{1}}{F_{o}}$
 
@@ -168,10 +224,62 @@ Simulations were necessary to ensure:
 
 ### STABILITY SIMULATION
 [schema si plot stab]
+<br>
+  <p align="center">
+    <img height = "550" src = "TIA_STABILITY.JPG">
+    <br>
+    <br>
+</p>
+<br>
+
+
+<br>
+  <p align="center">
+    <img height = "550" src = "STABILITY_INTERSECTION.jpg">
+    <br>
+    <br>
+</p>
+<br>
+
+
 ### TRANSIMPEDANCE SIMULATION
 [schema si plot IVGain]
+<br>
+  <p align="center">
+    <img height = "550" src = "TRANSIENT_IVGAIN.JPG">
+    <br>
+    <br>
+</p>
+<br>
+
+
+<br>
+  <p align="center">
+    <img height = "550" src = "TIA_IVGAIN.jpg">
+    <br>
+    <br>
+</p>
+<br>
+
 ### TRANSIENT BEHAVIOUR
 [Schema si plot trans]
+<br>
+  <p align="center">
+    <img height = "550" src = "TRANSIENT_IVGAIN.JPG">
+    <br>
+    <br>
+</p>
+<br>
+
+
+<br>
+  <p align="center">
+    <img height = "550" src = "TIA_TRANSIENT.jpg">
+    <br>
+    <br>
+</p>
+<br>
+
 ## Built prototype
 Pending arrival of necessary components.
 
