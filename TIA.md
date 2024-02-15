@@ -38,4 +38,44 @@ This is the equivalent circuit of a TIA with input and photodiode capacitances d
 The input capacitance is defined as $C_{I}=C_{D}+C_{CM}+C_{DIFF}$, where $C_{D}$ is the junction capacitance of the photodiode, and the other two terms are the parasitic capacitances of the input impedance of the op-amp.
 
 A simple stability analysis is quite straightforward, the same as for the non-compensated transresistance amplifier, with the mention that addition of $C_{F}$ introduces a pole in expression of $\frac{1}{\beta}$. For us, $\frac{1}{\beta}=\frac{1+s\cdot R_{F}(C_{F}+C_{I})}{1+s\cdot R_{F}C_{F}}$, as depicted below:
-[piecewise deconstruction of ]
+[piecewise deconstruction of 1/beta]
+
+The introduction of a pole cancels out the positive slope imparted by the zero and stability is achieved.
+
+A fist step towards building a working circuit is determining the maximum feedback cap value, such that the frequency of the pole of $\frac{1}{beta}$ is smaller or equal to the desired bandwidth of the TIA. The idea behind this is that beyond the pole frequenct the overall transfer function of the circuit will decrease rapidly.
+
+$$C_{F}\leq \frac{1}{2\pi\cdot R_{F}\cdot f_{-3dB}}$$
+
+The next step would be to determine the minimum GBP of an op-amp that could be used for our application.
+
+However, I've taken a different approach.
+
+## Q-based design procedure
+This is based on the presentation "Simple Transimpedance Designs Using High Speed Op Amps" by Steffens and Ramus.
+After long work the gentlemen from TI obtain the following transfer function characterizing the workings of the TIA:
+[slide 7 cu mentiune sursa]
+A regular second order transfer function is of the form $G(s)=G_{0}*\frac{w_{o}^{2}}{s^{2}+s\cdot\frac{wo}{Q}+w_{o}^{2}}$. If you are familiar with the other notation convention, $\zeta$ is in this case is $\frac{1}{2\cdot Q}$, and $C_{S}$ is the same as $C_{S}$
+[slide 8]
+[slide 10]
+
+Of interest to us is the equality $Q = \frac{F_{o}}{F_{c}}=\frac{P_{1}}{F_{o}}$
+
+$$\begin{align}
+Q\cdot F_{o}=P_{1}\\
+\\
+Q\cdot \sqrt{Z_{1}\cdot GBP}=P_{1}\\
+\\
+Q^{2}\cdot Z_{1}\cdot GBP=P_{1}^{2}\\
+\\
+Q^{2}\cdot GBP \cdot \frac{1}{C_{F}+C_{S}}=\frac{1}{2\pi\cdot R_{F}C_{F}^{2}}\\
+\\
+\end{align}$$
+
+In the end we obtain the following quadratic equation: 
+$$2\pi\cdot Q^{2}\cdot GBP\cdot R_{F}\cdot C_{F}^{2}-C_{F}-C_{S}=0$$
+
+The equation has two solutions , only one will be valid, and that is simple to prove. There are two ways to go about this. The first one assumes that the capacitance of the photodiode is at least 10x times bigger than the feedback cap, as such we neglect the term $C_{F}$ from the equation $2\pi\cdot Q^{2}\cdot GBP\cdot R_{F}\cdot C_{F}^{2}-C_{F}-C_{S}=0$ and obtain $2\pi\cdot Q^{2}\cdot GBP\cdot R_{F}\cdot C_{F}^{2}=C_{S}$.
+Approximated as such, the solutions for $C_{F}$ are $\pm\sqrt{\frac{C_{S}}{2\pi\cdot Q^{2}\cdot GBP\cdot R_{F}}}$. One of them is obviously negative, so we have the solution $C_{F}=\frac{1}{Q}\cdot\sqrt{\frac{C_{S}}{2\pi\cdot GBP\cdot R_{F}}}$.
+
+This approximation (or similar) ones only work with gigantic photodiodes, for photodiodes with capacitances closer to the feedback values we need a different approach:
+$$\begin{align}
