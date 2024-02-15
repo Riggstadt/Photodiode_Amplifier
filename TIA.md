@@ -38,8 +38,6 @@ This is the equivalent circuit of a TIA with input and photodiode capacitances d
 The input capacitance is defined as $C_{I}=C_{D}+C_{CM}+C_{DIFF}$, where $C_{D}$ is the junction capacitance of the photodiode, and the other two terms are the parasitic capacitances of the input impedance of the op-amp.
 
 A simple stability analysis is quite straightforward, the same as for the non-compensated transresistance amplifier, with the mention that addition of $C_{F}$ introduces a pole in expression of $\frac{1}{\beta}$. For us, $\frac{1}{\beta}=\frac{1+s\cdot R_{F}(C_{F}+C_{I})}{1+s\cdot R_{F}C_{F}}$, as depicted below:
-[piecewise deconstruction of 1/beta]
-
 The introduction of a pole cancels out the positive slope imparted by the zero and stability is achieved.
 
 A fist step towards building a working circuit is determining the maximum feedback cap value, such that the frequency of the pole of $\frac{1}{beta}$ is smaller or equal to the desired bandwidth of the TIA. The idea behind this is that beyond the pole frequenct the overall transfer function of the circuit will decrease rapidly.
@@ -121,7 +119,7 @@ These are the most relevant specs of the op-amp I selected, the OPA2374:
 |----------------|---------|------|
 | GBP            | 6.5     | MHz  |
 | $A_{OL}$*      | 110     | dB   |
-| $I_{B}/I_{OS}$ | $\pm$10 | pA   |
+| $I_{B}/I_{OS}$ | $\pm$ 10| pA   |
 | $V_{OS}$       | 5       | mV   |
 | $C_{DIFF}$     | 3       | pF   |
 | $C_{CM}$       | 6       | pF   |
