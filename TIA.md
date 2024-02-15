@@ -1,0 +1,3 @@
+# DESIGN AND IMPLEMENTATION OF A PROPER PHOTODIODE TRANSIMPEDANCE AMPLIFIER
+## Introduction
+## Theoretical aspects and derivations
