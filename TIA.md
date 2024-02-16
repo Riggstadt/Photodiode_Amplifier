@@ -207,7 +207,7 @@ RF
 Q = 1
 
 #CF optimum value
-CF = (1 + np.sqrt(1 + 8 * Q * np.pi * GBP * RF * (CJD + CI))) / (2 * Q * np.pi * GBP * RF)
+CF = (1 + np.sqrt(1 + 8 * Q ** 2 * np.pi * GBP * RF * (CJD + CI))) / (4 * Q ** 2 * np.pi * GBP * RF)
 print(np.round(CF/1e-12,2), "pF")
 
 #Distance from pole to crossing
