@@ -166,7 +166,7 @@ In addition, to better make use of the op-amps AOL and properly bias the input s
 
 <br>
   <p align="center">
-    <img height = "550" src = "STABILITY_DIAGRAM.JPG">
+    <img height = "550" src = "STABILITY_DIAGRAM.jpg">
     <br>
     <br>
     <a><b>Stability analysis, frequency response</b></a>
@@ -180,30 +180,33 @@ In addition, to better make use of the op-amps AOL and properly bias the input s
     <img height = "550" src = "IVGAIN_CIRCUIT.JPG">
     <br>
     <br>
+     <a><b>Test-circuit for transient response and Bandwidth</b></a>
 </p>
-<a><b>Test-circuit for transient response and Bandwidth</b></a>
 <br>
+
 
 <br>
   <p align="center">
-    <img height = "550" src = "TRANSIENT_RESPONSE.JPG">
+    <img height = "550" src = "TRANSIENT_RESPONSE.jpg">
     <br>
     <br>
     <a><b>Transient reponse of the circuit to 100KHz square wave input signal</b></a>
 </p>
 <br>
 
+
 <br>
   <p align="center">
-    <img height = "550" src = "RISE_TIME_TR.JPG">
+    <img height = "550" src = "RISE_TIME_TR.jpg">
     <br>
     <br>
     <a><b>Rise time of TIA</b></a>
 </p>
 
+
 <br>
   <p align="center">
-    <img height = "550" src = "IVGAIN_BW.JPG">
+    <img height = "550" src = "IVGAIN_BW.jpg">
     <br>
     <br>
     <a><b>Bandwith and Transimpedance Gain of TIA</b></a>
