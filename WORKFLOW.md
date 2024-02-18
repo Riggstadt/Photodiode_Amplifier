@@ -218,6 +218,11 @@ In addition, to better make use of the op-amps AOL and properly bias the input s
 As the simulations have shown, the circuit was responsibly implemented, with all design parameters achieved or surclassed. It remains only to build the circuit in real life.
 
 The compensated TIA is a seemingly simple circuit, but it presents many challenges.
+## Notes
+-   Noise: I need to learn more about the concept of noise or total noise of a circuit
+-   Input offset voltage has negligible eeffect on the output, because noise gain is very close to unity.
+-   As depicted here, with VB = 0V and V+ = VCM, the photodiode is reversed biased, being used in the photoconductive mode. As a result, a small dark current appears.
+
 ## Bibliography
 - https://www.planetanalog.com/seemingly-simple-circuits-transresistance-amplifier-part-1-approximating-op-amps/
 - https://www.planetanalog.com/stability-issues-for-high-speed-amplifiers-introductory-background-and-improved-analysis-insight-5/
