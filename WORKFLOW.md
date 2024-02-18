@@ -23,13 +23,13 @@ input capacitance (photodiode capacitance and parasitic op-amp input capacitance
 Of great importance to our design workflow, the Q-factor has several values of great interest to us. Any second order system can be underdamped, overdamped or criticaly damped. Q-factor has great impact on rise-time ($t_{r}$) and overshoot ($PO$). We would like to have a signal with no overshoot
 and no rise-time. This is, however, impossible, a compromise is desirable. 
 
--  Underdamped sytems have short rise-times, but large overshoots and settling times
--  Overdamped sytem have small overhoots, but long rise-times
+-  Underdamped systems have short rise-times, but large overshoots and settling times
+-  Overdamped systems have small overshoots, but long rise-times
 -  Critically damped systems have short rise-times and no overshoots
 
-A system is considered critically damped if the Q-factor is 0.5.
+A system is considered critically damped if the Q-factor is 0.5 (or $\zeta$ = 0.5).
 
-Other useful Q-factors are Q = 1 and Q = $\frac{\sqrt(2)}{2}$, with the second one being the Q-factor for which the transfer function attains a maximally flat frequency response.
+Other useful Q-factors are Q = 1 and Q = $\frac{\sqrt{2}}{2}$, with the second one being the Q-factor for which the transfer function attains a maximally flat frequency response.
 
 ## Design Process
 Given the known variables and constraints:
@@ -71,7 +71,7 @@ We have the following requirements:
 | $C_{D}$ @ VR = 0V   | 15     | pF      |
 
 The parameters have the following meanings:
--  $f_{max}$ is the maximum frequency where the wavefrom should have no significant distortion
+-  $f_{max}$ is the maximum frequency where the waveform should have no significant distortion
 -   $I_{SC}$ is the shortcircuit current of the photodiode QSD2030F from ONSEMI
 -   $V_{O(max)}$ is the maximum output voltage swing
 -   $C_{D}$ is the photodiode capacitance
@@ -86,7 +86,7 @@ Otherwise, this are the most important parameters of the op-amp I selected:
 | Parameter      | Value   | Unit |
 |----------------|---------|------|
 | GBP            | 6.5     | MHz  |
-| $A_{OL}$*      | 110     | dB   |
+| $A_{OL}$      | 110     | dB   |
 | $I_{B}/I_{OS}$ | $\pm$ 10| pA   |
 | $V_{OS}$       | 5       | mV   |
 | $C_{DIFF}$     | 3       | pF   |
