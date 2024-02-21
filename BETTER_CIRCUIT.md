@@ -20,7 +20,7 @@ This is the circuit:
 
 <br>
   <p align="center">
-    <img height = "550" src = "FINAL_FORM.jpg">
+    <img height = "550" src = "FINAL_FORM.JPG">
     <br>
     <br>
     <a><b>Final iteration of the Photodiode Transimpedance amplifier</b></a>
