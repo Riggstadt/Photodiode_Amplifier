@@ -23,13 +23,13 @@ The low pass filtering of the input or battery voltage can be safely ignored whe
 </p>
 <br>
 
-The transfer function of the circuit will be $T(s)=\frac{R_{L}}{1+s\cdot R_{L}\\;C_{D}}$, with CD being the diode capacitance for a given reverse bias voltage (VR). From this simple first order transfer function we may derive the following useful parameters:
+The transfer function of the circuit will be $T(s)=\frac{R_{L}}{1+s\cdot R_{L}\\;C_{D}}$, with $C_{D}$ being the diode capacitance for a given reverse bias voltage ($V_{R}$). From this simple first order transfer function we may derive the following useful parameters:
 - tr or rise time: $BW=\frac{1}{2\pi\cdot R_{L}\\;C_{D}}$
 - BW or Bandwidth: $t_{r}=\frac{0.35}{BW}=2.2\cdot R_{L}\\;C_{D}$
 
 Formulas for both BW and tr are derived on <a href="https://en.wikipedia.org/wiki/Rise_time#:~:text=One%2Dstage%20low%2Dpass%20RC%20network%5Bedit%5D">this</a> wikipedia page. 
 
-As we can see, the bandwidth is limited by both $C_{D}$ and $R_{L}$. Higher load resistance will yield higher output voltage, but will lead to lower overall VR and a decrease in bandwidth. An optional capacitor may be added in parallel to the load resistor to further constrain the bandwidth of the system.
+As we can see, the bandwidth is limited by both $C_{D}$ and $R_{L}$. Higher load resistance will yield higher output voltage, but will lead to lower overall $V_{R}$ and a decrease in bandwidth. An optional capacitor may be added in parallel to the load resistor to further constrain the bandwidth of the system.
 
 Being reverse biased, the photodiode will have a dark current, dependant on the reverse voltage of the diode. For large reverse voltages (above $4\cdot V_{T}$), the dark current will closely match the saturation current of the photodiode. 
 
