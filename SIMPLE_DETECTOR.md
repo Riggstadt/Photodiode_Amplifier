@@ -6,7 +6,7 @@ A simple photodiode detector is based around a reverse biased photodiode connect
 This is how a simplified circuit of a photodetector looks like:
 <br>
   <p align="center">
-    <img height = "550" src = "DETCIRCUIT.png">
+    <img height = "400" src = "DETCIRCUIT.png">
     <br>
     <br>
     <a><b>Simple photodetector with resistive load, with supply voltage filtering</b></a>
@@ -16,7 +16,7 @@ This is how a simplified circuit of a photodetector looks like:
 The low pass filtering of the input or battery voltage can be safely ignored when analysing the circuit for bandwidth and rise time limitations, as such the equivalent circuit for the detector looks like this:
 <br>
   <p align="center">
-    <img height = "550" src = "EQUIVCIRCUIT.png">
+    <img height = "400" src = "EQUIVCIRCUIT.png">
     <br>
     <br>
     <a><b>Equivalent circuit of photodetector, with internal capacitance of photodiode depicted</b></a>
@@ -41,7 +41,7 @@ This is the circuit schematic:
 
 <br>
   <p align="center">
-    <img height = "550" src = "SCHEMATIC.jpg">
+    <img height = "400" src = "SCHEMATIC.jpg">
     <br>
     <br>
 </p>
@@ -51,7 +51,7 @@ This is the built circuit on a protoboard:
 
 <br>
   <p align="center">
-    <img height = "550" src = "IRLCIRCUIT.jpg">
+    <img height = "400" src = "IRLCIRCUIT.jpg">
     <br>
     <br>
 </p>
@@ -62,11 +62,24 @@ We are interested in how the output voltage depends upon:
 - Frequency of incident light
 - Output power of light source
 
-For testing the frequency response of the photodetector, we need only to pulse an IR LED at various predetermined frequencies and measure the reduction in signal amplitude experienced, as compared to low or DC frequencies. For this measurements the distance between source and detector must be maintained constant.
+For testing the frequency response of the photodetector, we need only to pulse an IR LED at various predetermined frequencies and measure the reduction in signal amplitude experienced, as compared to low or DC frequencies. For this measurements the distance between source and detector must be maintained constant. 
+
+The led pulser is built around a simple base-voltage-referenced current source, controlled by a signal generator. The signal generator's maximum swing is 2.5V, thus we require a small control resistor. A 220 $\Omega$ to 470 $\Omega$ resistor will ensure sufficient current flow to both transistors of the pulser. 
 
 <br>
   <p align="center">
-    <img height = "550" src = "BWTEST.jpg">
+    <img height = "400" src = "LEDPULSER.png">
+    <br>
+    <br>
+    <a><b>IRLED pulser for frequency response testing </b></a>
+</p>
+<br>
+
+The collected measurements are presented in a plot below:
+
+<br>
+  <p align="center">
+    <img height = "400" src = "BWTEST.jpg">
     <br>
     <br>
     <a><b>Frequency response plot of photodetector</b></a>
