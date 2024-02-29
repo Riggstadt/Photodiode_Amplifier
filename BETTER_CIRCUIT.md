@@ -55,15 +55,3 @@ The circuit I build achieves:
 - minimal current consumption: low power op-amp with no current-hogging voltage reference for setting the DC offset
 
 The circuit can be powered by simple batteries and will last some time. I am satisfied with the design process, will build out the circuits when needed components arrive.
-
-
-
-https://www.thorlabs.com/catalogpages/Obsolete/2018/DET36A_M.pdf
-https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=9817
-https://pages.olin.edu/files/isim/files/m15.lab_.oximeter.pdf
-https://hackaday.io/project/18138-bullet-movies/log/49033-biased-photodetector-sensor
-https://electronics.stackexchange.com/questions/695059/how-to-estimate-the-optical-power-given-the-scope-reading-for-this-scenario
-https://electronics.stackexchange.com/questions/595250/what-is-the-role-of-capacitor-of-avalanche-photodiode-circuit
-https://www.farnell.com/datasheets/3171157.pdf
-https://www.instructables.com/How-to-Program-an-Attiny85-From-an-Arduino-Uno/
-https://electronics.stackexchange.com/questions/109115/why-when-calculating-rise-time-do-we-use-2-2-%CF%84-rc-low-pass-circuit
