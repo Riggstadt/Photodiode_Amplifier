@@ -62,7 +62,7 @@ We are interested in how the output voltage depends upon:
 - Frequency of incident light
 - Output power of light source
 
-For testing the frequency response of the photodetector, we need only to pulse an IR LED at various predetermined frequencies and measure the reduction in signal amplitude experienced, as compared to low or DC frequencies. For this measurements the distance between source and detector must be maintained constant. 
+For testing the frequency response of the photodetector, we need only to pulse an IR LED at various predetermined frequencies and note the frequency at which the rise time is 35% of the wave's period. For these measurements, the distance between the source and detector must be maintained constant. 
 
 The led pulser is built around a simple base-voltage-referenced current source, controlled by a signal generator. The signal generator's maximum swing is 2.5V, thus we require a small control resistor. A 220 $\Omega$ to 470 $\Omega$ resistor will ensure sufficient current flow to both transistors of the pulser. LED current will be $I_{LED}=\frac{V_{BE}}{R_{SET}}$, when Q2 is supplied by a positive voltage and $I_{LED}=0$ for all other cases.
 
