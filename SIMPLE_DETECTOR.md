@@ -4,24 +4,22 @@ I was inspired by a DET110 from Thorlabs that I've previously used in a universi
 A simple photodiode detector is based around a reverse biased photodiode connected to a load resistor. The load resistor sets the output voltage of the circuit. 
 
 This is how a simplified circuit of a photodetector looks like:
-[imagine photodetector thorlabs]
 <br>
   <p align="center">
-    <img height = "550" src = "STABILITY_DIAGRAM.jpg">
+    <img height = "550" src = "DETCIRCUIT.jpg">
     <br>
     <br>
-    <a><b>Stability analysis, frequency response</b></a>
+    <a><b>Simple photodetector with resistive load, with supply voltage filtering</b></a>
 </p>
 <br>
 
 The low pass filtering of the input or battery voltage can be safely ignored when analysing the circuit for bandwidth and rise time limitations, as such the equivalent circuit for the detector looks like this:
-[circuit echivalent detector]
 <br>
   <p align="center">
-    <img height = "550" src = "STABILITY_DIAGRAM.jpg">
+    <img height = "550" src = "EQUIVCIRCUIT.jpg">
     <br>
     <br>
-    <a><b>Stability analysis, frequency response</b></a>
+    <a><b>Equivalent circuit of photodetector, with internal capacitance of photodiode depicted</b></a>
 </p>
 <br>
 
@@ -29,22 +27,23 @@ The transfer function of the circuit will be $T(s)=\frac{R_{L}}{1+s\cdot R_{L}\\
 - tr or rise time: $BW=\frac{1}{2\pi\cdot R_{L}\\;C_{D}}$
 - BW or Bandwidth: $t_{r}=\frac{0.35}{BW}=2.2\cdot R_{L}\\;C_{D}$
 
-  As we can see the bandwidth is limited by both $C_{D}$ and $R_{L}$. Higher load resistance will yield higher output voltage, but will lead to lower overall VR and a decrease in bandwidth.
+Formulas for both BW and tr are derived on <a href="https://en.wikipedia.org/wiki/Rise_time#:~:text=One%2Dstage%20low%2Dpass%20RC%20network%5Bedit%5D">this</a> wikipedia page. 
+
+As we can see, the bandwidth is limited by both $C_{D}$ and $R_{L}$. Higher load resistance will yield higher output voltage, but will lead to lower overall VR and a decrease in bandwidth. An optional capacitor may be added in parallel to the load resistor to further constrain the bandwidth of the system.
 
 Being reverse biased, the photodiode will have a dark current, dependant on the reverse voltage of the diode. For large reverse voltages (above $4\cdot V_{T}$), the dark current will closely match the saturation current of the photodiode. 
 
 ## Building a miniature photodetector 
-A small photodector with voltage rail filtering is built around the IR photodiode PD15-22B-TR8, a small Si PIN photodiode with low capacitance and small form factor. The circuit is designed to be used on a solderless breadboard, in conjunction with an infrared emitter.
+A small photodetector with voltage rail filtering is built around the IR photodiode PD15-22B-TR8, a small Si PIN photodiode with low capacitance and small form factor. The circuit is designed to be used on a solderless breadboard, in conjunction with an infrared emitter.
 The small smd photodiode is soldered, for conveniance, on a 2.5mm header.
 
 This is the circuit schematic:
 
 <br>
   <p align="center">
-    <img height = "550" src = "STABILITY_DIAGRAM.jpg">
+    <img height = "550" src = "SCHEMATIC.jpg">
     <br>
     <br>
-    <a><b>Stability analysis, frequency response</b></a>
 </p>
 <br>
 
@@ -52,12 +51,31 @@ This is the built circuit on a protoboard:
 
 <br>
   <p align="center">
-    <img height = "550" src = "STABILITY_DIAGRAM.jpg">
+    <img height = "550" src = "IRLCIRCUIT.jpg">
     <br>
     <br>
-    <a><b>Stability analysis, frequency response</b></a>
 </p>
 <br>
 
 ## Performance of the photodetector circuit
+We are interested in how the output voltage depends upon:
+- Frequency of incident light
+- Output power of light source
+
+For testing the frequency response of the photodetector, we need only to pulse an IR LED at various predetermined frequencies and measure the reduction in signal amplitude experienced, as compared to low or DC frequencies. For this measurements the distance between source and detector must be maintained constant.
+
+<br>
+  <p align="center">
+    <img height = "550" src = "BWTEST.jpg">
+    <br>
+    <br>
+    <a><b>Frequency response plot of photodetector</b></a>
+</p>
+<br>
+
+The Bandwidth graphically determined from the above plot is BW = ? kHz.
+
+Varying the optical output power, whilst maintainting constant distance is not really possible with my equipment right now. As a general rule of thumb the sensing range of the small photodiode I used will be restricted to at most 10-15cm. This range may be extended or reduced depending on light source's optical power.
+
+
 
