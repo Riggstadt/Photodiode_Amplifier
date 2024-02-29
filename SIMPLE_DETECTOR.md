@@ -6,7 +6,7 @@ A simple photodiode detector is based around a reverse biased photodiode connect
 This is how a simplified circuit of a photodetector looks like:
 <br>
   <p align="center">
-    <img height = "550" src = "DETCIRCUIT.jpg">
+    <img height = "550" src = "DETCIRCUIT.png">
     <br>
     <br>
     <a><b>Simple photodetector with resistive load, with supply voltage filtering</b></a>
@@ -16,7 +16,7 @@ This is how a simplified circuit of a photodetector looks like:
 The low pass filtering of the input or battery voltage can be safely ignored when analysing the circuit for bandwidth and rise time limitations, as such the equivalent circuit for the detector looks like this:
 <br>
   <p align="center">
-    <img height = "550" src = "EQUIVCIRCUIT.jpg">
+    <img height = "550" src = "EQUIVCIRCUIT.png">
     <br>
     <br>
     <a><b>Equivalent circuit of photodetector, with internal capacitance of photodiode depicted</b></a>
