@@ -37,16 +37,6 @@ Being reverse biased, the photodiode will have a dark current, dependant on the 
 A small photodetector with voltage rail filtering is built around the IR photodiode PD15-22B-TR8, a small Si PIN photodiode with low capacitance and small form factor. The circuit is designed to be used on a solderless breadboard, in conjunction with an infrared emitter.
 The small smd photodiode is soldered, for conveniance, on a 2.5mm header.
 
-This is the circuit schematic:
-
-<br>
-  <p align="center">
-    <img height = "400" src = "SCHEMATIC.jpg">
-    <br>
-    <br>
-</p>
-<br>
-
 This is the built circuit on a protoboard:
 
 <br>
@@ -54,6 +44,7 @@ This is the built circuit on a protoboard:
     <img height = "400" src = "IRLCIRCUIT.jpg">
     <br>
     <br>
+    <a><b>The circuit as built, with light source pictured</b></a>
 </p>
 <br>
 
@@ -77,18 +68,28 @@ The led pulser is built around a simple base-voltage-referenced current source, 
 
 The collected measurements are presented in a plot below:
 
+The rise time calculated at a frequency of 500Hz is 15.5us, this yields an approximate bandwidth BW of 22.68kHz. The portable scope I'm using does not have a function for automatic rise time measurement, so I can't really make any precise measurements towards verifying the accuracy of my bandwidth estimate. Generally, the detector is not usable above 10kHz, the output becomes too distorted to use.
+
+Some relevant frequencies are those at which the fall/rise time are a combined 10% and 1% of the total period. For our circuit, assuming $t_{r}\approx t_{f}$, we have:
+
+| $\frac{t_{r}+t_{f}}{T_{sig}}\cdot 100\quad [\\%]$ | **Frequency [Hz]** |
+|-------------------------------------------------|--------------------|
+| 1                                               | 322.5              |
+| 10                                              | 3225               |
+
+Comparing the output waveforms of the photodetector, we can observe the clear difference between the two frequencies, despite being only a decade apart.
+
 <br>
   <p align="center">
-    <img height = "400" src = "BWTEST.jpg">
+    <img height = "400" src = "1PVS10P.png">
     <br>
     <br>
-    <a><b>Frequency response plot of photodetector</b></a>
+    <a><b>Comparison of output waveforms for 322.5 and 3225 Hz</b></a>
 </p>
 <br>
 
-The Bandwidth graphically determined from the above plot is BW = ? kHz.
-
 Varying the optical output power, whilst maintainting constant distance is not really possible with my equipment right now. As a general rule of thumb the sensing range of the small photodiode I used will be restricted to at most 10-15cm. This range may be extended or reduced depending on light source's optical power.
 
-
+## Conclusions
+This kind of photodetector is most useful at low frequencies, below 10kHz. Better suited for optical power measurement, than waveform capture.
 
