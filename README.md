@@ -58,7 +58,12 @@ If $Q_{min}\leq 0.5$ we can find the optimal value of CF, such that the system i
 $$C_{F}=\frac{1+\sqrt{1+8\cdot\pi\cdot Q^{2}\cdot GBP\cdot R_{F}\cdot C_{I}}}{4\cdot\pi\cdot Q^{2}\cdot GBP\cdot R_{F}}$$
 
 The formula from above is valid for all possible Q's.
+## A few additional notes after some careful tinkering
+This approach is best suited for TIAs with prospective bandwidths limited to 1MHz, or less. CFopt may, in some cases, be larger than CFmax, but that does not necessarily imply a reduction in bandwidth.
 
+With decreasing Q comes a decrease in Bandwidth and an increase in stability and phase margin. GBP also contributes to the size of the feedback capacitor, as the feedback capacitance is inversely proportional to the operational amplifier's GBP. A more useful and general method is to simply iterate all possible Q's and check for stability and feedback capacitance value. In general, a TIA with a feedback capacitance below 50fF will be impossible to realize, I would want to limit myself to a multiple of 0.5pF (and that only with very careful layout).  RF and Cin also have a great impact on CF and Bandwidth. 
+
+You can find the proper, general implementation of a general purpose TIA Design calculator <a href="">here</a>.
 ## Actual TIA implementation
 We have the following requirements:
 
