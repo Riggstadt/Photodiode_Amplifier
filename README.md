@@ -7,7 +7,7 @@ To achieve better performance, compensation is mandatory. A feedback capacitor i
 gain-crossing frequency, the ROC resolves to 20dB / decade, proper stability is achieved.
 
 ## Considerations
-There are fout main considerations when building out the compensated TIA pictured in this doc. :
+There are several main considerations when building out the compensated TIA pictured in this doc. :
 - Bandwidth: Feedback Capacitor CF degrades the bandwidth of the TIA
 - Op-amp GBP: High-bandwidth TIA's neccessitate op-amp with large GBPs
 - Stray Capacitances: Any stray capacitance across the gain resitor alters the transfer function of the circuit
@@ -29,10 +29,21 @@ and no rise-time. This is, however, impossible, a compromise is desirable.
 
 A system is considered critically damped if $\zeta\leq 1$. Q factor is closely related to the damping ratio, $\zeta$, as it follows: Q = $\frac{1}{2\cdot\zeta}$
 
-## An important note on stability and dampening 
-A stable system is not necessarily an over- or critically damped system. With a Q below 0.5 we may enjoy a smooth and devoid of ringing step-response, but this degrades the signal edge to much to really be useful. We desire a short rise time and a fast edge with minimal overshoot. A Q below 1 will ensure technical stability for any amplifier we may build. Any Q below $\frac{\sqrt(2)}{2}$ will provide a flat frequency response. For Q $\approx 0.707$ we will enjoy the maximally flat transfer function and minimal ringing.
+## An important note on stability and damping 
+A stable system is not necessarily an over- or critically damped system. With a Q below 0.5 we may enjoy a smooth and devoid of ringing step-response, but this degrades the signal edge to much to really be useful. We desire a short rise time and a fast edge with minimal overshoot. A Q below 1 will ensure technical stability for any amplifier we may build. Any Q below $\frac{\sqrt{2}}{2}$ will provide a flat frequency response. For Q $\approx 0.707$ we will enjoy the maximally flat transfer function and minimal ringing.
 
+The impact of the Q-factor on bandwidth can be easily observed in the graph below:
 
+<br>
+  <p align="center">
+    <img height = "550" src = "BW_OVER_NATFREQ.png">
+    <br>
+    <br>
+    <a><b>Normalized Bandwidth as a function of Q</b></a>
+</p>
+<br>
+
+We may observe that for any Q > $\frac{\sqrt{2}}{2}$ the Bandwidth will overcome the natural frequency of the system. A Butterworth response may be observed for a Q of $\frac{\sqrt{2}}{2}$. Increasing the Q, while tending to the matter of worsening ringing, will not yield fruitful results, as the Bandwidth maintains itself to about 1.55x times the value of the natural frequency.
 
 ## Design Process
 Given the known variables and constraints:
