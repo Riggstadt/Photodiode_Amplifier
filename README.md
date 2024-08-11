@@ -20,7 +20,7 @@ and is called the Bandwidth.
 This circuit presents two poles, one at $f_{p1}=\frac{1}{2\pi\cdot R_{F}C_{F}}$ and one at $f_{p2}=\frac{GBP\cdot C_{F}}{2\pi\cdot(C_{I}+C_{F})}$. The first pole acts as the dominant pole of the system, having the greater impact on limiting the Bandwidth of the circuit. $C_{I}$ is the total
 input capacitance (photodiode capacitance and parasitic op-amp input capacitance), while $C_{F}$ is the chosen value of the compensation capacitor.
 
-Of great importance to our design workflow, the Q-factor has several values of great interest to us. Any second order system can be underdamped, overdamped or criticaly damped. Q-factor has great impact on rise-time ($t_{r}$) and overshoot ($PO$). We would like to have a signal with no overshoot
+Of great importance to our design workflow, the Q-factor has several values of great interest to us. Any second order system can be underdamped, overdamped or critically damped. Q-factor has great impact on rise-time ($t_{r}$) and overshoot ($PO$). We would like to have a signal with no overshoot
 and no rise-time. This is, however, impossible, a compromise is desirable. 
 
 -  Underdamped systems have short rise-times, but large overshoots and settling times
@@ -30,7 +30,7 @@ and no rise-time. This is, however, impossible, a compromise is desirable.
 A system is considered critically damped if $\zeta\leq 1$. Q factor is closely related to the damping ratio, $\zeta$, as it follows: Q = $\frac{1}{2\cdot\zeta}$
 
 ## An important note on stability and damping 
-A stable system is not necessarily an over- or critically damped system. With a Q below 0.5 we may enjoy a smooth and devoid of ringing step-response, but this degrades the signal edge to much to really be useful. We desire a short rise time and a fast edge with minimal overshoot. A Q below 1 will ensure technical stability for any amplifier we may build. Any Q below $\frac{\sqrt{2}}{2}$ will provide a flat frequency response. For Q $\approx 0.707$ we will enjoy the maximally flat transfer function and minimal ringing.
+A stable system is not necessarily an over- or critically damped system. With a Q below 0.5 we may enjoy a smooth and devoid of ringing step-response, but this degrades the signal edge too much to really be useful. We desire a short rise time and a fast edge with minimal overshoot. A Q below 1 will ensure technical stability for any amplifier we may build. Any Q below $\frac{\sqrt{2}}{2}$ will provide a flat frequency response. For Q $\approx 0.707$ we will enjoy the maximally flat transfer function and minimal ringing.
 
 The impact of the Q-factor on bandwidth can be easily observed in the graph below:
 
